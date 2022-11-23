@@ -12,15 +12,21 @@
       <!-- Left Side Of Navbar -->
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a href="#" class="nav-link">Home</a>
+          <a href="/"
+            class="nav-link
+            @if ($page == 'home') {{ 'active' }} @endif
+          ">Home</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Schools</a>
+          <a href="/schools"
+            class="nav-link 
+            @if ($page == 'school') {{ 'active' }} @endif
+          ">Schools</a>
         </li>
       </ul>
 
       <!-- Right Side Of Navbar -->
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav">
         <!-- Authentication Links -->
         @guest
           @if (Route::has('login'))
